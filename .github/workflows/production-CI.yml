@@ -5,7 +5,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build_and_test:
+  build:
 
     runs-on: ubuntu-latest
 
@@ -15,6 +15,11 @@ jobs:
         with:
           node-version: '14'
       - run: (cd myCargonaut && npm ci)
-      - run: (cd myCargonaut && npm i -g @angular/cli)
+      - run: (cd myCargonaut && npm i -gangular/cli) @
       - run: (cd myCargonaut && npm run build)
-      - run: (cd myCargonaut && npm run test:ci)
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: (cd myCargonaut && npm run test)
+    	
