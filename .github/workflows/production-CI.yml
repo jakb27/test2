@@ -15,10 +15,10 @@ jobs:
         with:
           node-version: '14'
       - run: (cd myCargonaut && npm ci)
-      - run: (cd myCargonaut && npm i -gangular/cli) @
       - run: (cd myCargonaut && npm run build)
   test:
     runs-on: ubuntu-latest
+    needs: build
 
     steps:
       - uses: actions/checkout@v2
