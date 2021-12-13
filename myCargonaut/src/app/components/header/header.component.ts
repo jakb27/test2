@@ -8,6 +8,10 @@ import {AuthService} from "../../shared/services/auth.service";
 })
 export class HeaderComponent implements OnInit {
 
+  /**
+   * Takes two numbers and returns their sum
+   * @param authService first input to sum
+   */
   constructor(public authService: AuthService) { }
 
   ngOnInit(): void {
