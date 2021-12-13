@@ -8,11 +8,14 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    environment: 
-      name: Firebase_Deploy
-      url: https://mycargonaut-2e064.web.app
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
+     - uses: actions/setup-node@v2
+       with:
           node-version: '14'
+     - run: npm install -g @compodoc/compodoc   
+     - run: npm run compodoc
+     - name: Deploy
+       uses: peaceiris/actions-gh-pages@v3
+       with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./myCargonaut/documentation
