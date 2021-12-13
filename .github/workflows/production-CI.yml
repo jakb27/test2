@@ -12,9 +12,8 @@ jobs:
      - uses: actions/setup-node@v2
        with:
           node-version: '14'
-     - run: npm ci
-     - run: npm install -g @compodoc/compodoc   
-     - run: npm run compodoc
+     - run: (cd myCargonaut && npm install -g @compodoc/compodoc)   
+     - run: (cd myCargonaut && npm run compodoc)
      - name: Deploy
        uses: peaceiris/actions-gh-pages@v3
        with:
