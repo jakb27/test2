@@ -11,18 +11,9 @@ jobs:
     steps:
      - uses: actions/checkout@v2
      - name: Use Node.js 14
-       uses: actions/setup-node@v2
-       with:
-        node-version: '14'
-     - name: Cache
-       uses: actions/cache@v2
-       with:
-        path: |
-          ~/dist
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-
      - run: (cd myCargonaut && npm ci)
+     
+     
     # - uses: actions/upload-artifact@v2
    #    with:
     #      name: Build
