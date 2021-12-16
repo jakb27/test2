@@ -25,6 +25,7 @@ jobs:
      - run: (cd myCargonaut && npm ci)
   test:
     runs-on: ubuntu-latest
+    needs: build
     steps:
       - uses: actions/checkout@v2
       - run: (cd myCargonaut && npm run test:ci)
