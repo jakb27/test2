@@ -16,7 +16,7 @@ jobs:
      - run: (cd myCargonaut && npm ci)
      - run: (cd myCargonaut && npm run build)
      - uses: actions/upload-artifact@v2
-        with:
+       with:
           name: Build
           path: myCargonaut/dist/myCargonaut
 #  test:
