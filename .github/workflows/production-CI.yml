@@ -23,3 +23,9 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
      - run: (cd myCargonaut && npm ci)
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm run test:ci
+ 
