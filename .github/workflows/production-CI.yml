@@ -35,5 +35,5 @@ jobs:
        with:
           node-version: '14'
      - run: (cd myCargonaut && npm ci)
-     - run: (cd myCargonaut && npm run lint:ci)
+     - run: (cd myCargonaut && npm run test)
         
