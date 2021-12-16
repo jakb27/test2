@@ -39,7 +39,7 @@ jobs:
          # name: Build
          
   test2:
-    runs-on: Ubuntu:latest
+    runs-on: ubuntu:latest
     needs: test
     steps:
      - uses: actions/checkout@v2
