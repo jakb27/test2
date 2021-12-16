@@ -22,9 +22,6 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-     - uses: actions/setup-node@v2
-       with:
-          node-version: '14'
      - run: (cd myCargonaut && npm ci)
      - run: (cd myCargonaut && npm run test:ci)
     # - uses: actions/upload-artifact@v2
@@ -39,20 +36,4 @@ jobs:
       #  uses: actions/download-artifact@v2
        # with:
          # name: Build
-  lint:
-   runs-on: ubuntu-latest
-   steps:
-     - uses: actions/checkout@v2
-     - name: Cache Primes
-       id: cache-primes
-       uses: actions/cache@v2
-       with:
-        path: prime-numbers
-        key: ${{ runner.os }}-primes
 
-     - name: Generate Prime Numbers
-     - uses: actions/setup-node@v2
-       with:
-        node-version: '14'
-     - run: (cd myCargonaut && npm test:ci)
-     - run: (cd myCargonaut && npm run test:ci)
